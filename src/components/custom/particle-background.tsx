@@ -7,7 +7,7 @@
 import type { ISourceOptions } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./particle-background.css"
 
 const options: ISourceOptions = {
@@ -51,6 +51,14 @@ const options: ISourceOptions = {
   },
 };
 
+const MemoedBackground = memo(() => (
+  <Particles
+          id='ts-particles'
+          options={options}
+          className="h-full w-full animate-particle-fade-in"
+        />
+))
+
 export const ParticleBackground = () => {
 
   const [loaded, setLoaded] = useState(false);
@@ -67,11 +75,7 @@ export const ParticleBackground = () => {
   if (loaded) {
     return (
       <div className="w-full h-full particle-background">
-        <Particles
-          id='ts-particles'
-          options={options}
-          className="h-full w-full"
-        />
+        <MemoedBackground />
       </div>
     );
   }
