@@ -5,35 +5,197 @@
 /// Date: June 12th, 2024
 
 import { ParticleBackground } from '@/components/custom/particle-background';
-import { Avatar, AvatarFallback , AvatarImage} from '@/components/ui/avatar';
+import { ContactCard } from '@/components/views/contact-card';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useSkewEffect } from '@/hooks/useSkewEffect';
-
-/*
-        <Avatar className='w-20 h-20'>
-          <AvatarImage src='https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d' alt='Gavin Kerr' />
-          <AvatarFallback>GK</AvatarFallback>
-        </Avatar>
-*/
+import { ScrollArea } from './components/ui/scroll-area';
 
 const App = () => {
 
-  const {onMouseMove, onMouseLeave, transform} = useSkewEffect(5);
-
   return (
     <div className='w-screen h-screen'>
-      <div className='flex justify-center items-center animate-fade-in h-full'>
+      <div className='md:flex justify-center items-center animate-fade-in h-full'>
 
-        <Card className='h-full w-full mx-4 my-4 md:w-1/2 md:h-1/2 shadow-xl hover:shadow-2xl transition-all duration-75'
-          onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} style={{transform}}>
-          <CardContent>
-            <CardHeader>
-              <CardTitle>
-                Hey there!
-              </CardTitle>
-            </CardHeader>
-          </CardContent>
-        </Card>
+        <ContactCard className='mx-auto w-11/12 md:m-4 md:w-1/3 md:max-w-[400px]' />
+
+        <div className='mx-auto w-11/12 md:w-2/3 md:m-4'>
+
+          <ScrollArea className='flex flex-col gap-y-4 h-full overflow-y-auto'>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+            <Card className='mt-2'>
+              <CardContent>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-light'>
+                    About Me
+                  </CardTitle>
+                </CardHeader>
+                <h1 className='text-2xl'> Hey there! </h1>
+                <p>My name is Gavin Kerr and I am a 4th year computer science student at the University of Utah. </p>
+              </CardContent>
+            </Card>
+
+          </ScrollArea>
+
+        </div>
 
       </div>
 

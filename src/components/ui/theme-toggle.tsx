@@ -19,7 +19,7 @@ import {
 
 import { useTheme } from "@/components/theme-provider"
 
-export function ModeToggle() {
+export function ThemeToggle() {
   const { setTheme } = useTheme()
 
   return (
