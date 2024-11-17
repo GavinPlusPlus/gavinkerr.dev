@@ -34,8 +34,7 @@ const RootLayout = () => {
         </div>
         <p className="text-center py-2 dark:text-white">© 2024 Gavin Kerr</p>
       </footer>
-
-      <TanStackRouterDevtools />
+      {import.meta.env.DEV && <TanStackRouterDevtools />}
     </div>
   );
 
