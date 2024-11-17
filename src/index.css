@@ -2,9 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @layer base {
   :root {
     --radius: 0.5rem
   }
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply dark:bg-darkBg bg-bg;
+}
+
+body {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #000000;
+}
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}

@@ -6,5 +6,9 @@ export const Route = createFileRoute('/projects')({
 })
 
 function RouteComponent() {
-  return 'Hello /project!'
+  return (
+    <div className='transition-all animate-fade-in'>
+      test
+    </div>
+  )
 }
