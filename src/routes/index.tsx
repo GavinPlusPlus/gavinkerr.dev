@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { NameCard } from '@/components/name-card'
 
@@ -19,7 +18,13 @@ function RouteComponent() {
         <br/>
         <br/>
 
-        I am passionate about all different kinds of software development and have worked on a variety of different projects. 
+        Originally from Washington State, I grew up in the cold and often rainy Pacific Northwest. During those colder months, I spent most of my free time learning how to code and building various projects. I've always had a passion for technology and learning, and I've been fortunate enough to have the opportunity to work on some really cool projects over the years.
+      
+        <br/>
+        <br/>
+
+        Away from the keyboard, I enjoy hiking, skiing, and surfing. Since moving to Utah, I've had the incredible opportunity to explore Salt Lake and the vast mountains that surround it. I'm also a huge fan of working on my car and watching Formula 1. 
+
       </div>
     </div>
   )
