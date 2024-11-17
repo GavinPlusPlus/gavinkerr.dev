@@ -2,7 +2,7 @@ import { Nav } from '@/components/nav';
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import "../index.css"
-import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Code, GitBranch, Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 const RootLayout = () => {
 
@@ -30,6 +30,9 @@ const RootLayout = () => {
           </a>
           <a href='mailto:me@gavinkerr.dev'>
             <Mail size={32} />
+          </a>
+          <a href='https://github.com/GavinPlusPlus/gavinkerr.dev' target="_blank" rel="noopener noreferrer">
+            <Code size={32} />
           </a>
         </div>
         <p className="text-center py-2 dark:text-white">© 2024 Gavin Kerr</p>
