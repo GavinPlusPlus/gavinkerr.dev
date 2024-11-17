@@ -2,7 +2,7 @@ import { Nav } from '@/components/nav';
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import "../index.css"
-import { Code, GitBranch, Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Code, Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 const RootLayout = () => {
 
