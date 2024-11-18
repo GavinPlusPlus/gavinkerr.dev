@@ -5,6 +5,7 @@
 /// Date: Sun Nov 17 2024
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const NameCard = () => {
 
@@ -18,7 +19,9 @@ export const NameCard = () => {
                 <div className="flex-none md:max-w-[225px] max-w-[150px]">
                     <Avatar className="w-full h-full">
                         <AvatarImage src="https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d?s=512" alt='Gavin Kerr' />
-                        <AvatarFallback>GK</AvatarFallback>
+                        <AvatarFallback>
+                            <Skeleton className="rounded-full md:w-[225px] w-[150px] md:h-[225px] h-[150px]"></Skeleton>
+                        </AvatarFallback>
                     </Avatar>
                 </div>
             </div>
