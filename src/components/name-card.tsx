@@ -20,7 +20,7 @@ export const NameCard = () => {
                     <Avatar className="w-full h-full">
                         <AvatarImage src="https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d?s=512" alt='Gavin Kerr' />
                         <AvatarFallback>
-                            <Skeleton className="rounded-full md:w-[225px] w-[150px]"></Skeleton>
+                            <Skeleton className="rounded-full md:w-[225px] w-[150px] md:h-[225px] h-[150px]"></Skeleton>
                         </AvatarFallback>
                     </Avatar>
                 </div>
