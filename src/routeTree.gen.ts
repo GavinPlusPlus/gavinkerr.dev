@@ -13,7 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProjectsImport } from './routes/projects'
 import { Route as ContactImport } from './routes/contact'
+import { Route as DetailedProjectsImport } from './routes/_detailed-projects'
 import { Route as IndexImport } from './routes/index'
+import { Route as DetailedProjectsVesselviewImport } from './routes/_detailed-projects/vesselview'
 
 // Create/Update Routes
 
@@ -29,11 +31,24 @@ const ContactRoute = ContactImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DetailedProjectsRoute = DetailedProjectsImport.update({
+  id: '/_detailed-projects',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const DetailedProjectsVesselviewRoute = DetailedProjectsVesselviewImport.update(
+  {
+    id: '/vesselview',
+    path: '/vesselview',
+    getParentRoute: () => DetailedProjectsRoute,
+  } as any,
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -44,6 +59,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_detailed-projects': {
+      id: '/_detailed-projects'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof DetailedProjectsImport
       parentRoute: typeof rootRoute
     }
     '/contact': {
@@ -60,47 +82,79 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsImport
       parentRoute: typeof rootRoute
     }
+    '/_detailed-projects/vesselview': {
+      id: '/_detailed-projects/vesselview'
+      path: '/vesselview'
+      fullPath: '/vesselview'
+      preLoaderRoute: typeof DetailedProjectsVesselviewImport
+      parentRoute: typeof DetailedProjectsImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface DetailedProjectsRouteChildren {
+  DetailedProjectsVesselviewRoute: typeof DetailedProjectsVesselviewRoute
+}
+
+const DetailedProjectsRouteChildren: DetailedProjectsRouteChildren = {
+  DetailedProjectsVesselviewRoute: DetailedProjectsVesselviewRoute,
+}
+
+const DetailedProjectsRouteWithChildren =
+  DetailedProjectsRoute._addFileChildren(DetailedProjectsRouteChildren)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '': typeof DetailedProjectsRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '': typeof DetailedProjectsRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/_detailed-projects': typeof DetailedProjectsRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/_detailed-projects/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/projects'
+  fullPaths: '/' | '' | '/contact' | '/projects' | '/vesselview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/projects'
-  id: '__root__' | '/' | '/contact' | '/projects'
+  to: '/' | '' | '/contact' | '/projects' | '/vesselview'
+  id:
+    | '__root__'
+    | '/'
+    | '/_detailed-projects'
+    | '/contact'
+    | '/projects'
+    | '/_detailed-projects/vesselview'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DetailedProjectsRoute: typeof DetailedProjectsRouteWithChildren
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DetailedProjectsRoute: DetailedProjectsRouteWithChildren,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
 }
@@ -116,6 +170,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/_detailed-projects",
         "/contact",
         "/projects"
       ]
@@ -123,11 +178,21 @@ export const routeTree = rootRoute
     "/": {
       "filePath": "index.tsx"
     },
+    "/_detailed-projects": {
+      "filePath": "_detailed-projects.tsx",
+      "children": [
+        "/_detailed-projects/vesselview"
+      ]
+    },
     "/contact": {
       "filePath": "contact.tsx"
     },
     "/projects": {
       "filePath": "projects.tsx"
+    },
+    "/_detailed-projects/vesselview": {
+      "filePath": "_detailed-projects/vesselview.tsx",
+      "parent": "/_detailed-projects"
     }
   }
 }
