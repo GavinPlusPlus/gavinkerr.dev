@@ -1,22 +1,23 @@
 
 import { createFileRoute } from '@tanstack/react-router'
 import { Badge } from '@/components/ui/badge'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import Autoplay from "embla-carousel-autoplay"
-
-import AboutImage from '@/assets/vesselview_images/about.png'
-import ItemImage from '@/assets/vesselview_images/item-overview.png'
+import { Separator } from '@/components/ui/separator'
+import { ImageGallery } from '@/components/image-gallery'
+import { VesselViewImages } from '@/data/projects/vesselview-data'
 
 const VesselViewDetails = () => {
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full flex justify-between">
         <h1 className="text-4xl font-bold">VesselView</h1>
+        <h1 className="text-2xl font-bold items-center align-middle"><Badge>June 2023</Badge> - <Badge>Current</Badge></h1>
       </div>
 
+      <Separator className='w-full my-2 dark:bg-white bg-current' />
+
       <div>
-        <div className="mt-4 text-2xl text-bold">What is it?</div>
-        <div className="mt-1">
+        <div className="my-2 text-2xl text-bold">What is it?</div>
+        <div>
           VesselView is a full stack web application that I developed in
           house for{' '}
           <a
@@ -43,9 +44,11 @@ const VesselViewDetails = () => {
         </div>
       </div>
 
+      <Separator className='w-full my-2 dark:bg-white bg-current' />
+
       <div>
-        <div className="mt-4 text-2xl text-bold">Technologies</div>
-        <div className="mt-1 flex flex-row flex-wrap gap-1">
+        <div className="my-2 text-2xl text-bold">Technologies</div>
+        <div className="flex flex-row flex-wrap gap-1">
           <Badge>C#</Badge>
           <Badge>ASP.NET</Badge>
           <Badge>EntityFramework</Badge>
@@ -57,30 +60,11 @@ const VesselViewDetails = () => {
         </div>
       </div>
 
+      <Separator className='w-full my-2 dark:bg-white bg-current' />
+
       <div>
-        <div className='mt-4 text-2xl text-bold'>Screenshots</div>
-        <Carousel
-          className='rounded-md'
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
-          opts={{
-            align: "start",
-            loop: true,
-          }}>
-            <CarouselPrevious />
-          <CarouselContent>
-            <CarouselItem>
-              <img src={AboutImage} alt="VesselView Screenshot 1" />
-            </CarouselItem>
-            <CarouselItem>
-              <img src={ItemImage} alt="VesselView Screenshot 2" />
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselNext />
-        </Carousel>
+        <div className='my-2 text-2xl text-bold'>Screenshots</div>
+        <ImageGallery images={VesselViewImages} />
       </div>
 
     </div>

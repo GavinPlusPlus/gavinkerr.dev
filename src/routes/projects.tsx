@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Link } from '@tanstack/react-router'
+import { Button } from '@/components/ui/button'
 
 export const Route = createFileRoute('/projects')({
   component: RouteComponent,
@@ -101,7 +103,13 @@ function RouteComponent() {
                       <br />
                       <br />
 
-                      Since the project is an internal tool and under active development, I'm unable to share any links to source code but I'm happy to discuss the project and provide more information if you're interested!
+                      Since the project is an internal tool and under active development, I'm unable to share any links to source code but I'm happy to discuss the project and provide more information if you're interested! Or you can click the button below to view some screenshots of the project.
+
+                      <Link to='/vesselview'>
+                        <Button className='w-full my-4'>
+                          More Details
+                        </Button>
+                      </Link>
 
                     </div>
                   </div>
