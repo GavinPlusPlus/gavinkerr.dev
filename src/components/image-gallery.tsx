@@ -11,7 +11,6 @@ import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay';
 import { Dialog, DialogClose, DialogContent, DialogHeader } from './ui/dialog';
 import { useState } from 'react';
-import { X } from 'lucide-react';
 
 export interface ImageGalleryProps {
     images: GalleryEntry[];
