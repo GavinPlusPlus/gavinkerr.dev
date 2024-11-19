@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { GalleryEntry } from '@/data/gallery-entry';
 import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay';
-import { Dialog, DialogClose, DialogContent, DialogHeader } from './ui/dialog';
+import { Dialog, DialogContent, DialogHeader } from './ui/dialog';
 import { useState } from 'react';
 
 export interface ImageGalleryProps {
