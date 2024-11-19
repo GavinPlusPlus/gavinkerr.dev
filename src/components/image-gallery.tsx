@@ -72,14 +72,13 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
                 onOpenChange={() => setSelectedImage(null)}
             >
                 <DialogContent
-                    className='min-w-full overflow-auto'>
+                    className='max-w-fit'>
                     <DialogHeader>
                         <h2 className="text-2xl dark:text-darkText text-text">{selectedImage?.altText}</h2>
-                        
                     </DialogHeader>
                     <img src={selectedImage?.imageUrl}
                         alt={selectedImage?.altText}
-                        className="w-full rounded-md" />
+                        className="mx-auto rounded-md" />
                     <div className="flex flex-col mt-2 items-center dark:text-darkText text-text">
                         <p className="mt-1">{selectedImage?.description}</p>
                     </div>
