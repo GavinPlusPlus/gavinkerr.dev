@@ -25,6 +25,11 @@ function RouteComponent() {
 
         Away from the keyboard, I enjoy hiking, skiing, and surfing. Since moving to Utah, I've had the incredible opportunity to explore Salt Lake and the vast mountains that surround it. I'm also a huge fan of working on my car and watching Formula 1. 
 
+        <br/>
+        <br/>
+
+        Looking for my resume? You can find a copy of it <a href='https://drive.google.com/file/d/1GCJ5iui-pDvGfufjczwHaxJumnKLlaQc/view?usp=sharing' target="_blank" className='underline'>here</a>!
+
       </div>
     </div>
   )
