@@ -9,15 +9,15 @@ import { Badge } from '@/components/ui/badge'
 import { GalleryEntry } from '@/data/gallery-entry';
 import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay';
-import { Dialog, DialogContent } from './ui/dialog';
+import { Dialog, DialogClose, DialogContent, DialogHeader } from './ui/dialog';
 import { useState } from 'react';
+import { X } from 'lucide-react';
 
 export interface ImageGalleryProps {
     images: GalleryEntry[];
     className?: string;
     autoplayDuration?: number;
 }
-
 
 export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: ImageGalleryProps) => {
 
@@ -39,7 +39,7 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
                 }}
             >
                 <div className='hidden lg:block' >
-                    <CarouselPrevious/>
+                    <CarouselPrevious />
                 </div>
                 <CarouselContent className="flex space-x-4">
                     {images.map((image, index) => (
@@ -56,13 +56,13 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
                     ))}
                 </CarouselContent>
                 <div className='hidden lg:block' >
-                    <CarouselNext/>
+                    <CarouselNext />
                 </div>
 
                 <div className='lg:hidden py-4'>
                     <div className='absolute mt-2 left-[50%]'>
                         <CarouselPrevious />
-                        <CarouselNext/>
+                        <CarouselNext />
                     </div>
                 </div>
 
@@ -74,10 +74,14 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
             >
                 <DialogContent
                     className='min-w-full overflow-auto'>
-                    <img src={selectedImage?.imageUrl} 
-                        alt={selectedImage?.altText} 
+                    <DialogHeader>
+                        <h2 className="text-2xl dark:text-darkText text-text">{selectedImage?.altText}</h2>
+                        
+                    </DialogHeader>
+                    <img src={selectedImage?.imageUrl}
+                        alt={selectedImage?.altText}
                         className="w-full rounded-md" />
-                    <div className="flex flex-col mt-2 items-center ">
+                    <div className="flex flex-col mt-2 items-center dark:text-darkText text-text">
                         <p className="mt-1">{selectedImage?.description}</p>
                     </div>
                 </DialogContent>
