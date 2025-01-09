@@ -38,7 +38,7 @@ const RootLayout = () => {
             <FileUser size={32} />
           </a>
         </div>
-        <p className="text-center py-2 dark:text-white">© 2024 Gavin Kerr</p>
+        <p className="text-center py-2 dark:text-white">© 2024-2025 Gavin Kerr</p>
       </footer>
       {import.meta.env.DEV && <TanStackRouterDevtools />}
     </div>
