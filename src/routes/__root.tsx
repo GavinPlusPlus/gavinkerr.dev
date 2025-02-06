@@ -11,7 +11,6 @@ const RootLayout = () => {
       <header>
         <Nav />
       </header>
-      <hr />
 
       <div className="flex-1 text-text dark:text-darkText mx-auto w-[750px] max-w-full px-5 pb-10 pt-28">
         <Outlet />
