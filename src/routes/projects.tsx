@@ -25,7 +25,7 @@ function RouteComponent() {
               <CardHeader>
                 <CardTitle className='text-3xl'>NetMax</CardTitle>
                 <CardDescription>
-                  Timeline: <Badge>September 2024</Badge> - <Badge>Current</Badge>
+                  Timeline: <Badge>September 2024</Badge> - <Badge>May 2025</Badge>
                 </CardDescription>
                 <CardContent className='p-0'>
                   <div>
@@ -44,7 +44,7 @@ function RouteComponent() {
                       <br />
                       <br />
 
-                      The project is still in the early stages of development, but we're excited to be working with L3 Harris and are looking forward to delivering a product that will help their engineers be more efficient in their testing processes.
+                      If you're learning more about NetMax, feel free to check it out over on <a href='https://netmax.dev' target='_blank' className='underline'>netmax.dev</a>!
 
                     </div>
                     <div className='mt-4 text-2xl text-bold'>
