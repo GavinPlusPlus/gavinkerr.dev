@@ -20,17 +20,20 @@ function RouteComponent() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          My name is Gavin Kerr and I'm a 4th year student and software developer at the <a href='https://www.utah.edu/' target="_blank" className='underline'>University of Utah</a>, studying Computer Science.
+          My name is Gavin Kerr and I'm a software engineer based in Burlington, Washington at <a href='https://www.lindellyachts.com/' target="_blank" className='underline'>Lindell Yachts</a>.
+          As a recent graduate of the <a href='https://www.utah.edu/' target="_blank" className='underline'>University of Utah</a> in Computer Science, I am passionate about building software that makes a difference. Go Utes!
+
+          <br />
+          <br />
+         
+          I specialize in building internal web applications and tools that streamline operations and part procurement.
+          In addition to my SWE role, I've also had the privilege of working with the enginnering team at Lindell to integrate new methods of manufacturing and assembly into their production, including the use of 3D printers.
+
 
           <br />
           <br />
 
-          Originally from Washington State, I grew up in the cold and often rainy Pacific Northwest. During those colder months, I spent most of my free time learning how to code and building various projects. I've always had a passion for technology and learning, and I've been fortunate enough to have the opportunity to work on some really cool projects over the years.
-
-          <br />
-          <br />
-
-          Away from the keyboard, I enjoy hiking, skiing, and surfing. Since moving to Utah, I've had the incredible opportunity to explore Salt Lake and the vast mountains that surround it. I'm also a huge fan of working on my car and watching Formula 1.
+          Away from the keyboard, I enjoy hiking, skiing, and surfing. I'm also a huge fan of working on my car and watching Formula 1.
 
           <br />
           <br />

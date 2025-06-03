@@ -23,6 +23,60 @@ function RouteComponent() {
 
             <Card>
               <CardHeader>
+                <CardTitle className='text-3xl'>VesselView</CardTitle>
+                <CardDescription>
+                  Timeline: <Badge>June 2023</Badge> - <Badge>Current</Badge>
+                </CardDescription>
+                <CardContent className='p-0'>
+                  <div>
+                    <div className='mt-4 text-2xl text-bold'>
+                      What is it?
+                    </div>
+                    <div className='mt-1'>
+                      VesselView is a full stack web application that I developed in house for <a href="https://lindellyachts.com/" target="_blank" className='underline'>Lindell Yachts</a> that serves as a central hub for managing parts, inventory, and BOMs for their various models.
+
+                      <br />
+                      <br />
+
+                      Working with the team at Lindell Yachts, I've been able to develop a system that is tailored to their specific needs and requirements, including custom integrations with other software systems. (eg. QuickBooks, Excel, Primavera P6)
+
+                      <br />
+                      <br />
+
+                      Since the project is an internal tool and under active development, I'm unable to share any links to source code but I'm happy to discuss the project and provide more information if you're interested! Or you can click the button below to view some screenshots of the project.
+
+                      <Link to='/vesselview'>
+                        <Button className='w-full my-4'>
+                          More Details
+                        </Button>
+                      </Link>
+
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className='mt-4 text-2xl text-bold'>
+                      Technologies
+                    </div>
+                    <div className='mt-1 flex flex-row flex-wrap gap-1'>
+                      <Badge>C#</Badge>
+                      <Badge>ASP.NET</Badge>
+                      <Badge>EntityFramework</Badge>
+                      <Badge>PostgreSQL</Badge>
+                      <Badge>React</Badge>
+                      <Badge>TypeScript</Badge>
+                      <Badge>TailwindCSS</Badge>
+                      <Badge>Docker</Badge>
+                    </div>
+                  </div>
+
+                </CardContent>
+              </CardHeader>
+            </Card>
+
+
+            <Card>
+              <CardHeader>
                 <CardTitle className='text-3xl'>NetMax</CardTitle>
                 <CardDescription>
                   Timeline: <Badge>September 2024</Badge> - <Badge>May 2025</Badge>
@@ -72,61 +126,6 @@ function RouteComponent() {
                       <Badge>Docker</Badge>
                       <Badge>Python</Badge>
                       <Badge>TRex</Badge>
-                      <Badge>Ixia</Badge>
-                      <Badge>Spirent</Badge>
-                    </div>
-                  </div>
-
-                </CardContent>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className='text-3xl'>VesselView</CardTitle>
-                <CardDescription>
-                  Timeline: <Badge>June 2023</Badge> - <Badge>Current</Badge>
-                </CardDescription>
-                <CardContent className='p-0'>
-                  <div>
-                    <div className='mt-4 text-2xl text-bold'>
-                      What is it?
-                    </div>
-                    <div className='mt-1'>
-                      VesselView is a full stack web application that I developed in house for <a href="https://lindellyachts.com/" target="_blank" className='underline'>Lindell Yachts</a> that serves as a central hub for managing parts, inventory, and BOMs for their various models.
-
-                      <br />
-                      <br />
-
-                      Working with the team at Lindell Yachts, I've been able to develop a system that is tailored to their specific needs and requirements, including custom integrations with other software systems. (eg. QuickBooks, Excel, Primavera P6)
-
-                      <br />
-                      <br />
-
-                      Since the project is an internal tool and under active development, I'm unable to share any links to source code but I'm happy to discuss the project and provide more information if you're interested! Or you can click the button below to view some screenshots of the project.
-
-                      <Link to='/vesselview'>
-                        <Button className='w-full my-4'>
-                          More Details
-                        </Button>
-                      </Link>
-
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className='mt-4 text-2xl text-bold'>
-                      Technologies
-                    </div>
-                    <div className='mt-1 flex flex-row flex-wrap gap-1'>
-                      <Badge>C#</Badge>
-                      <Badge>ASP.NET</Badge>
-                      <Badge>EntityFramework</Badge>
-                      <Badge>PostgreSQL</Badge>
-                      <Badge>React</Badge>
-                      <Badge>TypeScript</Badge>
-                      <Badge>TailwindCSS</Badge>
-                      <Badge>Docker</Badge>
                     </div>
                   </div>
 

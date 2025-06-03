@@ -24,7 +24,7 @@ export const NameCard = () => {
                 <Card>
                     <CardContent className="grow mx-auto">
                         <div className="md:text-5xl text-3xl font-bold">Gavin Kerr</div>
-                        <div className="md:text-2xl text-lg">Student and Software Developer</div>
+                        <div className="md:text-2xl text-lg">Software Developer @ Lindell Yachts</div>
                     </CardContent>
                 </Card>
             </div>
@@ -32,7 +32,7 @@ export const NameCard = () => {
                 <Card>
                     <CardContent className="grow mx-auto">
                         <div className="md:text-5xl text-3xl font-bold">Gavin Kerr</div>
-                        <div className="md:text-2xl text-lg">Student and Software Developer</div>
+                        <div className="md:text-2xl text-lg">Software Developer @ Lindell Yachts</div>
                     </CardContent>
                 </Card>
                 <div className="flex-none md:max-w-[250px] max-w-[200px]">
