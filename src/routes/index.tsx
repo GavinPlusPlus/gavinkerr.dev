@@ -26,9 +26,8 @@ function RouteComponent() {
           <br />
           <br />
          
-          I specialize in building internal web applications and tools that streamline operations and part procurement.
-          In addition to my SWE role, I've also had the privilege of working with the enginnering team at Lindell to integrate new methods of manufacturing and assembly into their production, including the use of 3D printers.
-
+          My work spans from designing and developing applications in .NET, React, and TypeScript, to hands-on engineering with boats and embedded systems.
+          I've contributed to designing and 3D printing custom marine parts, automating onboard systems by integrating with Garmin's marine network, and deploying UniFi networking at the helm. I've also explored circuit design, creating a CM5-based control panel to extend vessel automation.
 
           <br />
           <br />

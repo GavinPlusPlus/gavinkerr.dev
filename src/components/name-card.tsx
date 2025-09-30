@@ -24,7 +24,7 @@ export const NameCard = () => {
                 <Card>
                     <CardContent className="grow mx-auto">
                         <div className="md:text-5xl text-3xl font-bold">Gavin Kerr</div>
-                        <div className="md:text-2xl text-lg">Software Developer @ Lindell Yachts</div>
+                        <div className="md:text-2xl text-lg">SWE and Integrations @ Lindell Yachts</div>
                     </CardContent>
                 </Card>
             </div>
@@ -32,10 +32,10 @@ export const NameCard = () => {
                 <Card>
                     <CardContent className="grow mx-auto">
                         <div className="md:text-5xl text-3xl font-bold">Gavin Kerr</div>
-                        <div className="md:text-2xl text-lg">Software Developer @ Lindell Yachts</div>
+                        <div className="md:text-2xl text-lg">SWE and Integrations @ Lindell Yachts</div>
                     </CardContent>
                 </Card>
-                <div className="flex-none md:max-w-[250px] max-w-[200px]">
+                <div className="flex-none md:max-w-[225px] max-w-[200px]">
                     <Avatar className="w-full h-full mt-4 md:mt-0">
                         <AvatarImage src="https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d?s=512" alt='Gavin Kerr' />
                         <AvatarFallback>

@@ -8,91 +8,119 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-// Import Routes
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DetailedProjectsRouteImport } from './routes/_detailed-projects'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as DetailedProjectsVesselviewRouteImport } from './routes/_detailed-projects/vesselview'
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as ProjectsImport } from './routes/projects'
-import { Route as ContactImport } from './routes/contact'
-import { Route as DetailedProjectsImport } from './routes/_detailed-projects'
-import { Route as IndexImport } from './routes/index'
-import { Route as DetailedProjectsVesselviewImport } from './routes/_detailed-projects/vesselview'
-
-// Create/Update Routes
-
-const ProjectsRoute = ProjectsImport.update({
+const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const ContactRoute = ContactImport.update({
+const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const DetailedProjectsRoute = DetailedProjectsImport.update({
+const DetailedProjectsRoute = DetailedProjectsRouteImport.update({
   id: '/_detailed-projects',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const IndexRoute = IndexImport.update({
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const DetailedProjectsVesselviewRoute = DetailedProjectsVesselviewImport.update(
-  {
+const DetailedProjectsVesselviewRoute =
+  DetailedProjectsVesselviewRouteImport.update({
     id: '/vesselview',
     path: '/vesselview',
     getParentRoute: () => DetailedProjectsRoute,
-  } as any,
-)
+  } as any)
 
-// Populate the FileRoutesByPath interface
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/vesselview': typeof DetailedProjectsVesselviewRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/vesselview': typeof DetailedProjectsVesselviewRoute
+}
+export interface FileRoutesById {
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/_detailed-projects': typeof DetailedProjectsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/_detailed-projects/vesselview': typeof DetailedProjectsVesselviewRoute
+}
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/contact' | '/projects' | '/vesselview'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/contact' | '/projects' | '/vesselview'
+  id:
+    | '__root__'
+    | '/'
+    | '/_detailed-projects'
+    | '/contact'
+    | '/projects'
+    | '/_detailed-projects/vesselview'
+  fileRoutesById: FileRoutesById
+}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  DetailedProjectsRoute: typeof DetailedProjectsRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  ProjectsRoute: typeof ProjectsRoute
+}
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/_detailed-projects': {
-      id: '/_detailed-projects'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof DetailedProjectsImport
-      parentRoute: typeof rootRoute
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
-      preLoaderRoute: typeof ContactImport
-      parentRoute: typeof rootRoute
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsImport
-      parentRoute: typeof rootRoute
+    '/_detailed-projects': {
+      id: '/_detailed-projects'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof DetailedProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_detailed-projects/vesselview': {
       id: '/_detailed-projects/vesselview'
       path: '/vesselview'
       fullPath: '/vesselview'
-      preLoaderRoute: typeof DetailedProjectsVesselviewImport
-      parentRoute: typeof DetailedProjectsImport
+      preLoaderRoute: typeof DetailedProjectsVesselviewRouteImport
+      parentRoute: typeof DetailedProjectsRoute
     }
   }
 }
-
-// Create and export the route tree
 
 interface DetailedProjectsRouteChildren {
   DetailedProjectsVesselviewRoute: typeof DetailedProjectsVesselviewRoute
@@ -105,95 +133,12 @@ const DetailedProjectsRouteChildren: DetailedProjectsRouteChildren = {
 const DetailedProjectsRouteWithChildren =
   DetailedProjectsRoute._addFileChildren(DetailedProjectsRouteChildren)
 
-export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '': typeof DetailedProjectsRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
-  '/vesselview': typeof DetailedProjectsVesselviewRoute
-}
-
-export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '': typeof DetailedProjectsRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
-  '/vesselview': typeof DetailedProjectsVesselviewRoute
-}
-
-export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/_detailed-projects': typeof DetailedProjectsRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
-  '/_detailed-projects/vesselview': typeof DetailedProjectsVesselviewRoute
-}
-
-export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '' | '/contact' | '/projects' | '/vesselview'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '' | '/contact' | '/projects' | '/vesselview'
-  id:
-    | '__root__'
-    | '/'
-    | '/_detailed-projects'
-    | '/contact'
-    | '/projects'
-    | '/_detailed-projects/vesselview'
-  fileRoutesById: FileRoutesById
-}
-
-export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  DetailedProjectsRoute: typeof DetailedProjectsRouteWithChildren
-  ContactRoute: typeof ContactRoute
-  ProjectsRoute: typeof ProjectsRoute
-}
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DetailedProjectsRoute: DetailedProjectsRouteWithChildren,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/",
-        "/_detailed-projects",
-        "/contact",
-        "/projects"
-      ]
-    },
-    "/": {
-      "filePath": "index.tsx"
-    },
-    "/_detailed-projects": {
-      "filePath": "_detailed-projects.tsx",
-      "children": [
-        "/_detailed-projects/vesselview"
-      ]
-    },
-    "/contact": {
-      "filePath": "contact.tsx"
-    },
-    "/projects": {
-      "filePath": "projects.tsx"
-    },
-    "/_detailed-projects/vesselview": {
-      "filePath": "_detailed-projects/vesselview.tsx",
-      "parent": "/_detailed-projects"
-    }
-  }
-}
-ROUTE_MANIFEST_END */

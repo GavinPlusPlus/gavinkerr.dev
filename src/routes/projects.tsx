@@ -74,6 +74,52 @@ function RouteComponent() {
               </CardHeader>
             </Card>
 
+            <Card>
+              <CardHeader>
+                <CardTitle className='text-3xl'>LetterSpy</CardTitle>
+                <CardDescription>
+                  Timeline: <Badge>May 2023</Badge> - <Badge>Current</Badge>
+                </CardDescription>
+                <CardContent className='p-0'>
+                  <div>
+                    <div className='mt-4 text-2xl text-bold'>
+                      What is it?
+                    </div>
+                    <div className='mt-1'>
+
+                      Originally starting as a project at <a href="https://www.bellarmineprep.org/" target="_blank" className='underline'>Bellarmine Preparatory School</a> in Tacoma WA,
+                      LetterSpy is an educational game to help students with Dyslexia (like myself!) learn and recognize the differences between similar looking letters.
+
+                      <br />
+                      <br />
+
+                      Based off of the original flash card game developed by the  <a href="https://www.arkinst.org/" target="_blank" className='underline'>ARK Institute of Learning</a>, I've been working on developing a mobile app version of the game that will be available on iOS for both iPhone and iPad.
+                      Leveraging the flexibility of mobile devices, We've been able to integrate new modes and features to help students learn and practice in new ways.
+
+                      <br />
+                      <br />
+
+                      The app is currently in development and I'm hoping to release it in the App Store in the near future.
+
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className='mt-4 text-2xl text-bold'>
+                      Technologies
+                    </div>
+                    <div className='mt-1 flex flex-row flex-wrap gap-1'>
+                      <Badge>Swift</Badge>
+                      <Badge>SwiftUI</Badge>
+                      <Badge>StoreKit 2</Badge>
+                      <Badge>CoreData</Badge>
+                    </div>
+                  </div>
+
+                </CardContent>
+              </CardHeader>
+            </Card>
+
 
             <Card>
               <CardHeader>
@@ -126,52 +172,6 @@ function RouteComponent() {
                       <Badge>Docker</Badge>
                       <Badge>Python</Badge>
                       <Badge>TRex</Badge>
-                    </div>
-                  </div>
-
-                </CardContent>
-              </CardHeader>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className='text-3xl'>LetterSpy</CardTitle>
-                <CardDescription>
-                  Timeline: <Badge>May 2023</Badge> - <Badge>Current</Badge>
-                </CardDescription>
-                <CardContent className='p-0'>
-                  <div>
-                    <div className='mt-4 text-2xl text-bold'>
-                      What is it?
-                    </div>
-                    <div className='mt-1'>
-
-                      Originally starting as a project at <a href="https://www.bellarmineprep.org/" target="_blank" className='underline'>Bellarmine Preparatory School</a> in Tacoma WA,
-                      LetterSpy is an educational game to help students with Dyslexia (like myself!) learn and recognize the differences between similar looking letters.
-
-                      <br />
-                      <br />
-
-                      Based off of the original flash card game developed by the  <a href="https://www.arkinst.org/" target="_blank" className='underline'>ARK Institute of Learning</a>, I've been working on developing a mobile app version of the game that will be available on iOS for both iPhone and iPad.
-                      Leveraging the flexibility of mobile devices, We've been able to integrate new modes and features to help students learn and practice in new ways.
-
-                      <br />
-                      <br />
-
-                      The app is currently in development and I'm hoping to release it in the App Store in the near future.
-
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className='mt-4 text-2xl text-bold'>
-                      Technologies
-                    </div>
-                    <div className='mt-1 flex flex-row flex-wrap gap-1'>
-                      <Badge>Swift</Badge>
-                      <Badge>SwiftUI</Badge>
-                      <Badge>StoreKit 2</Badge>
-                      <Badge>CoreData</Badge>
                     </div>
                   </div>
 
