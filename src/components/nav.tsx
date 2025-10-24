@@ -22,7 +22,7 @@ const Routes = [
     },
     {
         name: "Contact",
-        route: "/contact"
+        route: "/contact" 
     }
 ]
 
