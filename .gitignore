@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 .DS_Store
+
+# Wrangler/Cloudflare
+.wrangler/
+.dev.vars
+wrangler.toml.bak

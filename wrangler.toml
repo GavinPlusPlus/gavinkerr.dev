@@ -1,0 +1,14 @@
+name = "gavinkerr-dev"
+compatibility_date = "2024-01-24"
+
+pages_build_output_dir = "dist"
+
+# Route configuration for SPA
+[env.production]
+name = "gavinkerr-dev"
+routes = [
+  { pattern = "gavinkerr.dev/*", zone_name = "gavinkerr.dev" }
+]
+
+[env.preview]
+name = "gavinkerr-dev-preview"
