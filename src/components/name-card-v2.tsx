@@ -78,7 +78,7 @@ export const NameCardV2 = ({ className }: NameCardV2Props) => {
         const elapsed = Date.now() - startTime;
         const angle = (elapsed / 4000) * Math.PI * 2; // Full rotation every 4 seconds
         const x = Math.sin(angle) * 5; // ±5 degrees
-        const y = Math.cos(angle) * 5; // ±5 degrees
+        const y = Math.cos(angle) * 7; // ±5 degrees
         setRotate({ x, y });
         animationFrame = requestAnimationFrame(animateIdle);
       };
@@ -109,7 +109,7 @@ export const NameCardV2 = ({ className }: NameCardV2Props) => {
       }}
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 transition-all duration-300 ease-in-out">
-        <Avatar className="flex-shrink-0 w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] md:w-[180px] md:h-[180px] transition-all duration-300 ease-in-out">
+        <Avatar className="flex-shrink-0 w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[180px] md:h-[180px] transition-all duration-300 ease-in-out">
           <AvatarImage
             src="https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d?s=512"
             alt="Gavin Kerr"
@@ -121,7 +121,7 @@ export const NameCardV2 = ({ className }: NameCardV2Props) => {
         </Avatar>
 
         <div className="flex flex-col text-center md:text-left transition-all duration-300 ease-in-out">
-          <div className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold transition-all duration-300 ease-in-out">Gavin Kerr</div>
+          <div className="text-2xl sm:text-3xl md:text-5xl font-bold transition-all duration-300 ease-in-out">Gavin Kerr</div>
           <div className="text-base md:text-lg lg:text-2xl mt-1 sm:mt-2 transition-all duration-300 ease-in-out">
             SWE and Integrations @ Lindell Yachts
           </div>
