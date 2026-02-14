@@ -38,7 +38,7 @@ function RouteComponent() {
                     <div className="mt-4 text-2xl text-bold">What is it?</div>
                     <div className="mt-1">
                       VesselView is a full stack web application that I
-                      developed in house for{" "}
+                    developed in house for{" "}
                       <a
                         href="https://lindellyachts.com/"
                         target="_blank"

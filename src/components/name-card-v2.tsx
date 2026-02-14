@@ -8,6 +8,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { throttle } from "@/lib/throttle";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback, useRef } from "react";
 
@@ -15,21 +16,6 @@ interface NameCardV2Props {
   className?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function throttle<T extends (...args: any[]) => any>(
-  func: T,
-  delay: number,
-): (...args: Parameters<T>) => void {
-  let lastCall = 0;
-  return (...args: Parameters<T>) => {
-    const now = new Date().getTime();
-    if (now - lastCall < delay) {
-      return;
-    }
-    lastCall = now;
-    return func(...args);
-  };
-}
 
 export const NameCardV2 = ({ className }: NameCardV2Props) => {
   const [idle, setIdle] = useState<boolean>(true);
@@ -108,7 +94,7 @@ export const NameCardV2 = ({ className }: NameCardV2Props) => {
         transition: "all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s",
       }}
     >
-      <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 transition-all duration-300 ease-in-out">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-12 transition-all duration-300 ease-in-out">
         <Avatar className="flex-shrink-0 w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[180px] md:h-[180px] transition-all duration-300 ease-in-out">
           <AvatarImage
             src="https://gravatar.com/avatar/832764445dc859a8f99cf1a626c0c099fe3b142dfdb3a69ab3b37a7232e3809d?s=512"
@@ -122,8 +108,11 @@ export const NameCardV2 = ({ className }: NameCardV2Props) => {
 
         <div className="flex flex-col text-center md:text-left transition-all duration-300 ease-in-out">
           <div className="text-2xl sm:text-3xl md:text-5xl font-bold transition-all duration-300 ease-in-out">Gavin Kerr</div>
-          <div className="text-base md:text-lg lg:text-2xl mt-1 sm:mt-2 transition-all duration-300 ease-in-out">
-            SWE and Integrations @ Lindell Yachts
+          <div className="text-base sm:text-lg md:text-2xl mt-1 sm:mt-2 transition-all duration-300 ease-in-out">
+            SWE and Integrations
+          </div>
+          <div className="text-sm md:text-base mt-1 sm:mt-2 transition-all duration-300 ease-in-out">
+             @Lindell Yachts
           </div>
         </div>
       </div>

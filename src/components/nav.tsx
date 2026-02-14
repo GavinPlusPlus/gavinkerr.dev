@@ -23,6 +23,10 @@ const Routes = [
     {
         name: "Contact",
         route: "/contact" 
+    },
+    {
+        name: "Skills",
+        route: "/skills"
     }
 ]
 
