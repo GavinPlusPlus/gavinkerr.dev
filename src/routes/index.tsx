@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { NameCardV2 } from '@/components/name-card-v2'
+import { SkillsCarousel } from '@/components/skills-carousel'
+import { AnimationFrameProvider } from '@/components/animation-frame-provider'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -9,11 +11,12 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
 
   return (
+    <AnimationFrameProvider>
     <div className='w-full transition-all animate-fade-in'>
 
       <NameCardV2 className='my-4'/>
 
-      <Card>
+      <Card className='mb-4'>
         <CardHeader>
           <CardTitle className='text-2xl'>
             Hey there!
@@ -42,6 +45,9 @@ function RouteComponent() {
         </CardContent>
       </Card>
 
+      <SkillsCarousel />
+
     </div>
+    </AnimationFrameProvider>
   )
 }
