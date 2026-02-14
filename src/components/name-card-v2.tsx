@@ -8,6 +8,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { throttle } from "@/lib/throttle";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback, useRef } from "react";
 
@@ -15,21 +16,6 @@ interface NameCardV2Props {
   className?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function throttle<T extends (...args: any[]) => any>(
-  func: T,
-  delay: number,
-): (...args: Parameters<T>) => void {
-  let lastCall = 0;
-  return (...args: Parameters<T>) => {
-    const now = new Date().getTime();
-    if (now - lastCall < delay) {
-      return;
-    }
-    lastCall = now;
-    return func(...args);
-  };
-}
 
 export const NameCardV2 = ({ className }: NameCardV2Props) => {
   const [idle, setIdle] = useState<boolean>(true);
