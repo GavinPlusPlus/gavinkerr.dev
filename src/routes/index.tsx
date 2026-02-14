@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { NameCard } from '@/components/name-card'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { NameCardV2 } from '@/components/name-card-v2'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -10,8 +10,8 @@ function RouteComponent() {
 
   return (
     <div className='w-full transition-all animate-fade-in'>
-      <NameCard />
-      <br />
+
+      <NameCardV2 className='my-4'/>
 
       <Card>
         <CardHeader>

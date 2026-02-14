@@ -43,10 +43,14 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
                 <CarouselContent className="flex space-x-4">
                     {images.map((image, index) => (
                         <CarouselItem key={index} className="w-full">
-                            <img src={image.imageUrl}
-                                alt={image.altText}
-                                className="w-full rounded-md"
-                                onClick={() => setSelectedImage(image)} />
+                            <div className="relative w-full aspect-video max-h-[250px] md:max-h-[350px] cursor-pointer group" 
+                                 onClick={() => setSelectedImage(image)}>
+                                <img 
+                                    src={image.imageUrl}
+                                    alt={image.altText}
+                                    className="w-full h-full object-contain rounded-md transition-opacity group-hover:opacity-90" 
+                                />
+                            </div>
                             <div className="flex flex-col mt-2 items-center">
                                 <Badge className="text-xs w-fit my-1">{index + 1} of {images.length}</Badge>
                                 <p className="mt-1">{image.description}</p>
@@ -72,15 +76,19 @@ export const ImageGallery = ({ images, className, autoplayDuration = 5000 }: Ima
                 onOpenChange={() => setSelectedImage(null)}
             >
                 <DialogContent
-                    className='max-w-fit'>
-                    <DialogHeader>
-                        <h2 className="text-2xl dark:text-darkText text-text">{selectedImage?.altText}</h2>
+                    className='!max-w-[95vw] md:!max-w-[90vw] lg:!max-w-[85vw] xl:!max-w-[80vw] max-h-[95vh] overflow-hidden p-3 gap-2'>
+                    <DialogHeader className="shrink-0">
+                        <h2 className="text-base sm:text-lg dark:text-darkText text-text line-clamp-2">{selectedImage?.altText}</h2>
                     </DialogHeader>
-                    <img src={selectedImage?.imageUrl}
-                        alt={selectedImage?.altText}
-                        className="mx-auto rounded-md" />
-                    <div className="flex flex-col mt-2 items-center dark:text-darkText text-text">
-                        <p className="mt-1">{selectedImage?.description}</p>
+                    <div className="flex items-center justify-center min-h-0 flex-1">
+                        <img 
+                            src={selectedImage?.imageUrl}
+                            alt={selectedImage?.altText}
+                            className="w-full h-full max-w-full max-h-[calc(95vh-140px)] object-contain" 
+                        />
+                    </div>
+                    <div className="flex flex-col items-center dark:text-darkText text-text shrink-0">
+                        <p className="text-xs sm:text-sm line-clamp-3">{selectedImage?.description}</p>
                     </div>
                 </DialogContent>
             </Dialog>

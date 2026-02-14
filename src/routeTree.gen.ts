@@ -101,7 +101,7 @@ declare module '@tanstack/react-router' {
     '/_detailed-projects': {
       id: '/_detailed-projects'
       path: ''
-      fullPath: ''
+      fullPath: '/'
       preLoaderRoute: typeof DetailedProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
