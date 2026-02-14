@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { ImageGallery } from '@/components/image-gallery'
-import { VesselViewImages } from '@/data/projects/vesselview-data'
+import { VesselViewImagesV2 } from '@/data/projects/vesselview-data'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const VesselViewDetails = () => {
@@ -44,6 +44,17 @@ const VesselViewDetails = () => {
             software systems. (eg. QuickBooks, Excel, Primavera P6)
             <br />
             <br />
+            Everything that gets installed on our boats at Lindell lives in 
+            this system, allowing us to get traceability down to the serial number
+            for individual items in our customers unique boats.
+            <br />
+            <br />
+            The project now also includes a React Native App for our shop iPads,
+            allowing our crew to scan item tags throughout the shop to do their purchase requests.
+            Additionally, a Kiosk helper has been developed to bridge the web app to our 
+            employee access cards, allowing for convenient check in/out at workstations. 
+            <br />
+            <br />
             Since the project is an internal tool and under active
             development, I'm unable to share any links to source code but
             I'm happy to discuss the project and provide more information
@@ -65,9 +76,12 @@ const VesselViewDetails = () => {
             <Badge>EntityFramework</Badge>
             <Badge>PostgreSQL</Badge>
             <Badge>React</Badge>
+            <Badge>React Native</Badge>
+            <Badge>AvaloniaUI</Badge>
             <Badge>TypeScript</Badge>
             <Badge>TailwindCSS</Badge>
             <Badge>Docker</Badge>
+            <Badge>WebSockets</Badge>
           </div>
         </CardContent>
       </Card>
@@ -79,7 +93,7 @@ const VesselViewDetails = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-        <ImageGallery images={VesselViewImages} />
+        <ImageGallery images={VesselViewImagesV2} />
         </CardContent>
       </Card>
 
