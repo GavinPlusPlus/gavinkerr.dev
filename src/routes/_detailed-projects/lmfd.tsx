@@ -9,7 +9,7 @@ import { ImageGallery } from "@/components/image-gallery";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { VesselViewImagesV2 } from "@/data/projects/vesselview-data";
+import { LMFDImages } from "@/data/projects/lmfd-data";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_detailed-projects/lmfd")({
@@ -34,7 +34,7 @@ function RouteComponent() {
             <CardTitle className="text-2xl">Photos</CardTitle>
           </CardHeader>
           <CardContent>
-            <ImageGallery images={VesselViewImagesV2} />
+            <ImageGallery images={LMFDImages} />
           </CardContent>
         </Card>
         <Card>
