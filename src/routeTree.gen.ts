@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DetailedProjectsRouteImport } from './routes/_detailed-projects'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DetailedProjectsVesselviewRouteImport } from './routes/_detailed-projects/vesselview'
+import { Route as DetailedProjectsLmfdRouteImport } from './routes/_detailed-projects/lmfd'
 
 const SkillsRoute = SkillsRouteImport.update({
   id: '/skills',
@@ -46,12 +47,18 @@ const DetailedProjectsVesselviewRoute =
     path: '/vesselview',
     getParentRoute: () => DetailedProjectsRoute,
   } as any)
+const DetailedProjectsLmfdRoute = DetailedProjectsLmfdRouteImport.update({
+  id: '/lmfd',
+  path: '/lmfd',
+  getParentRoute: () => DetailedProjectsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/lmfd': typeof DetailedProjectsLmfdRoute
   '/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 export interface FileRoutesByTo {
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/lmfd': typeof DetailedProjectsLmfdRoute
   '/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 export interface FileRoutesById {
@@ -68,13 +76,20 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/_detailed-projects/lmfd': typeof DetailedProjectsLmfdRoute
   '/_detailed-projects/vesselview': typeof DetailedProjectsVesselviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/projects' | '/skills' | '/vesselview'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/lmfd'
+    | '/vesselview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/projects' | '/skills' | '/vesselview'
+  to: '/' | '/contact' | '/projects' | '/skills' | '/lmfd' | '/vesselview'
   id:
     | '__root__'
     | '/'
@@ -82,6 +97,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects'
     | '/skills'
+    | '/_detailed-projects/lmfd'
     | '/_detailed-projects/vesselview'
   fileRoutesById: FileRoutesById
 }
@@ -137,14 +153,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DetailedProjectsVesselviewRouteImport
       parentRoute: typeof DetailedProjectsRoute
     }
+    '/_detailed-projects/lmfd': {
+      id: '/_detailed-projects/lmfd'
+      path: '/lmfd'
+      fullPath: '/lmfd'
+      preLoaderRoute: typeof DetailedProjectsLmfdRouteImport
+      parentRoute: typeof DetailedProjectsRoute
+    }
   }
 }
 
 interface DetailedProjectsRouteChildren {
+  DetailedProjectsLmfdRoute: typeof DetailedProjectsLmfdRoute
   DetailedProjectsVesselviewRoute: typeof DetailedProjectsVesselviewRoute
 }
 
 const DetailedProjectsRouteChildren: DetailedProjectsRouteChildren = {
+  DetailedProjectsLmfdRoute: DetailedProjectsLmfdRoute,
   DetailedProjectsVesselviewRoute: DetailedProjectsVesselviewRoute,
 }
 

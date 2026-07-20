@@ -8,7 +8,13 @@
 import { useEffect, useRef } from "react";
 import { SkillCard } from "./skill-card";
 import { skillsData } from "@/data/skills-data";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export const SkillsCarousel = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -67,7 +73,7 @@ export const SkillsCarousel = () => {
       <CardHeader>
         <CardTitle className="text-2xl">Skills</CardTitle>
         <CardDescription>
-            A showcase of the technologies and tools I have experience with. 
+          A showcase of the technologies and tools I have experience with.
         </CardDescription>
       </CardHeader>
       <CardContent>

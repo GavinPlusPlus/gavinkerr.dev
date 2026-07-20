@@ -38,7 +38,7 @@ function RouteComponent() {
                     <div className="mt-4 text-2xl text-bold">What is it?</div>
                     <div className="mt-1">
                       VesselView is a full stack web application that I
-                    developed in house for{" "}
+                      developed in house for{" "}
                       <a
                         href="https://lindellyachts.com/"
                         target="_blank"
@@ -77,6 +77,65 @@ function RouteComponent() {
                       <Badge>TailwindCSS</Badge>
                       <Badge>Docker</Badge>
                       <Badge>WebSockets</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl">
+                  Lindell Multi-Function Display (LMFD)
+                </CardTitle>
+                <CardDescription>
+                  Timeline: <Badge>September 2025</Badge> -{" "}
+                  <Badge>Current</Badge>
+                </CardDescription>
+                <CardContent className="p-0">
+                  <div>
+                    <div className="mt-4 text-2xl text-bold">What is it?</div>
+                    <div className="mt-1">
+                      The Lindell Multi-Function Display (LMFD) or more
+                      specifically the LMFD-Touch-10 is a RaspberryPi CM5 based
+                      device I designed for the 48' model at{" "}
+                      <a
+                        href="https://lindellyachts.com/"
+                        target="_blank"
+                        className="underline"
+                      >
+                        Lindell Yachts
+                      </a>{" "}
+                      that serves as a central hub for controlling lights,
+                      pumps, and other system on the boat.
+                      <br />
+                      <br />
+                      The device itself consists of a custom designed PCB that
+                      carries the System on Module, a 10" touch screen, and a
+                      fully custom enclosure designed to blend in with the rest
+                      of the boat's interior.
+                      <br />
+                      <br />
+                      Check out more below!
+                      <Link to="/lmfd">
+                        <Button className="w-full my-4">More Details</Button>
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="mt-4 text-2xl text-bold">
+                      Technologies and Tools
+                    </div>
+                    <div className="mt-1 flex flex-row flex-wrap gap-1">
+                      <Badge>C#</Badge>
+                      <Badge>ASP.NET</Badge>
+                      <Badge>SQLite</Badge>
+                      <Badge>React</Badge>
+                      <Badge>Electron</Badge>
+                      <Badge>TypeScript</Badge>
+                      <Badge>KiCad</Badge>
+                      <Badge>Autodesk Fusion</Badge>
                     </div>
                   </div>
                 </CardContent>
