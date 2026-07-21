@@ -7,6 +7,7 @@
 
 import avalonia from "@/assets/Avalonia_logo.svg";
 import fusion360 from "@/assets/Fusion360_Logo.svg";
+import kicad from "@/assets/KiCad-Logo.svg";
 
 export interface SkillCardData {
   imgUrl: string;
@@ -84,5 +85,10 @@ export const skillsData: SkillCardData[] = [
     imgUrl: fusion360,
     title: "Autodesk Fusion",
     shine: 0.7,
+  },
+  {
+    imgUrl: kicad,
+    title: "KiCad",
+    shine: 0.95,
   },
 ];

@@ -30,15 +30,20 @@ export const SkillCard = ({
   const [hovering, setHovering] = useState<boolean>(false);
 
   // Memoized random start to ensure each card instance gets unique values
-  const initialRotation = useMemo(() => ({
-    x: randStart ? Math.random() * xMax * 2 - xMax : 0,
-    y: randStart ? Math.random() * yMax * 2 - yMax : 0,
-  }), [randStart, xMax, yMax]);
+  const initialRotation = useMemo(
+    () => ({
+      x: randStart ? Math.random() * xMax * 2 - xMax : 0,
+      y: randStart ? Math.random() * yMax * 2 - yMax : 0,
+    }),
+    [randStart, xMax, yMax],
+  );
 
   // Random time offset so cards don't all animate in sync
   const timeOffset = useMemo(() => Math.random() * 4000, []);
 
-  const [rotate, setRotate] = useState<{ x: number; y: number }>(initialRotation);
+  const [rotate, setRotate] = useState<{ x: number; y: number }>(
+    initialRotation,
+  );
 
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -61,24 +66,27 @@ export const SkillCard = ({
   const targetPos = useRef({ x: 50, y: 50 });
   const currentPos = useRef({ x: 50, y: 50 });
 
-  const onPointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-    // update rotation (throttled) and spotlight target (unthrottled)
-    throttledMouseMove.current?.(e);
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const pctX = Math.min(100, Math.max(0, (x / rect.width) * 100));
-    const pctY = Math.min(100, Math.max(0, (y / rect.height) * 100));
-    targetPos.current.x = pctX;
-    targetPos.current.y = pctY;
-    // size based on skill.shine but clamped
-    const spotSize = Math.max(32, Math.min((skill.shine || 1) * 64, 110));
-    el.style.setProperty("--spot-size", `${spotSize}px`);
-    setIdle(false);
-    setHovering(true);
-  }, [skill.shine]);
+  const onPointerMove = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      // update rotation (throttled) and spotlight target (unthrottled)
+      throttledMouseMove.current?.(e);
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const pctX = Math.min(100, Math.max(0, (x / rect.width) * 100));
+      const pctY = Math.min(100, Math.max(0, (y / rect.height) * 100));
+      targetPos.current.x = pctX;
+      targetPos.current.y = pctY;
+      // size based on skill.shine but clamped
+      const spotSize = Math.max(32, Math.min((skill.shine || 1) * 64, 110));
+      el.style.setProperty("--spot-size", `${spotSize}px`);
+      setIdle(false);
+      setHovering(true);
+    },
+    [skill.shine],
+  );
 
   const onPointerLeave = () => {
     setIdle(true);
@@ -100,8 +108,16 @@ export const SkillCard = ({
     if (!el) return;
 
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-    currentPos.current.x = lerp(currentPos.current.x, targetPos.current.x, 0.18);
-    currentPos.current.y = lerp(currentPos.current.y, targetPos.current.y, 0.18);
+    currentPos.current.x = lerp(
+      currentPos.current.x,
+      targetPos.current.x,
+      0.18,
+    );
+    currentPos.current.y = lerp(
+      currentPos.current.y,
+      targetPos.current.y,
+      0.18,
+    );
     el.style.setProperty("--mxp", `${currentPos.current.x}%`);
     el.style.setProperty("--myp", `${currentPos.current.y}%`);
   }, [hovering]);
@@ -224,7 +240,7 @@ export const SkillCard = ({
         <img
           src={skill.imgUrl}
           alt={skill.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain pointer-events-none select-none"
         />
       </div>
 
