@@ -55,7 +55,7 @@ function RouteComponent() {
             <br />
             Looking for my resume? You can find a copy of it{" "}
             <a
-              href="https://drive.google.com/file/d/14JBWfeYG_VRPPjfXxJzXb8pRSKql5SMB/view?usp=sharing"
+              href="https://drive.google.com/file/d/1o77wd_RoUp8DOu9RtfLwve8MuE-1gsm_/view?usp=sharing"
               target="_blank"
               className="underline"
             >

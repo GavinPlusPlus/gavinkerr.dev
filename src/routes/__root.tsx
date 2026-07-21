@@ -58,7 +58,7 @@ const RootLayout = () => {
               <Code size={32} />
             </a>
             <a
-              href="https://drive.google.com/file/d/14JBWfeYG_VRPPjfXxJzXb8pRSKql5SMB/view?usp=sharing"
+              href="https://drive.google.com/file/d/1o77wd_RoUp8DOu9RtfLwve8MuE-1gsm_/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
