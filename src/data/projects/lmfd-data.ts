@@ -15,7 +15,7 @@ export const LMFDImages: GalleryEntry[] = [
     imageUrl: lmfd_back,
     altText: "A rendering from Fusion 360 showing the back of the LMFD.",
     description:
-      "This image shows the back of the LMFD as rendered in Fusion 360. To get the two tone effect, a Prusa XL is used for printing.",
+      "This image shows the back of the LMFD as rendered in Fusion 360. To get the two-tone effect, a 5 Toolhead Prusa XL is used for printing.",
   },
   {
     imageUrl: lmfd_installed,

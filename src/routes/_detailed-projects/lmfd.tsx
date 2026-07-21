@@ -53,7 +53,7 @@ function RouteComponent() {
               Lindell Yachts
             </a>{" "}
             that serves as a central hub for controlling lights, pumps, and
-            other system on the boat.
+            other systems on the boat.
             <br />
             <br />
             The device itself consists of a custom designed PCB that carries the
@@ -73,7 +73,7 @@ function RouteComponent() {
               on our new 48' model. Existing options we could install from
               Garmin proved to be overkill in some areas (essentially being a
               full chart plotter just used for switching), and underwhelming in
-              performance (Seconds long page switches). Additionally,
+              performance (seconds long page switches). Additionally,
               pre-exiting options shut down when the engines transitioned from
               on to off, making them a non starter for a 24/7 system.
             </div>
@@ -93,7 +93,7 @@ function RouteComponent() {
               software prototypes, I designed a custom PCB to expose the various
               interfaces we would need to integrate with the boat. In addition
               to the PCB, I designed a custom wrapper around the existing web
-              interfaces to provide a more user friendly experience, with quick
+              interfaces to provide a more user-friendly experience, with quick
               app switching and a more focused look and feel.
             </p>
           </CardContent>
